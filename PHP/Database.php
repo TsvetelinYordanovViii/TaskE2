@@ -26,26 +26,26 @@ class Database {
         }
 
 
-        $insertValues = "";
+        $insertFields = "";
         $insertParameters = "";
-        for ($i=0; $i < sizeof($tableFields); $i++) {
+        for ($i=0; $i < sizeof($tableFields)-1; $i++) {
             $table = $tableFields[$i];
-            $insertFields = $tableFields + " $table, ";
-            $insertParameters = $tableFields + " :$table, ";
+            $insertFields = "$insertFields $table,";
+            $insertParameters = "$insertParameters :$table,";
         }
-        $insertValues = " " + $tableFields[sizeof($tableFields)-1];
-        $insertParameters = " :" + $tableFields[sizeof($tableFields)-1];
+        $lastParameter = $tableFields[sizeof($tableFields)-1];
+        $insertFields = "$insertFields $lastParameter";
+        $insertParameters = "$insertParameters :$lastParameter";
 
-        $createQuery = "
-            INSERT INTO $searchedTable
-                ($insertFields) VALUES ($insertParameters)
-        ";
+        $createQuery = "INSERT INTO $searchedTable
+                ($insertFields) VALUES ($insertParameters)";
 
         $createStm = $this->conn->prepare($createQuery);
         for ($i=0; $i < sizeof($tableFields); $i++) { 
-            $createStm->bindParam((':' + $tableFields[$i]), $tableValues[$i]);
+            $parameter = ":$tableFields[$i]";
+            $parameterValue = $tableValues[$i];
+            $createStm->bindParam($parameter, $parameterValue);
         }
-
         $createStm->execute();
     }
 
@@ -87,10 +87,11 @@ class Database {
 
         $updateParameters = "";
         for ($i=1; $i < sizeof($tableFields)-1; $i++) {
-            $table = $tableFields[$i];
-            $insertParameters = $tableFields[0] + " = :" + $tableFields[0] + ", ";
+            $parameter = $tableFields[$i];
+            $updateParameters =  "$updateParameters $parameter = :$parameter,";
         }
-        $updateParameters = " :" + $tableFields[sizeof($tableFields)-1];
+        $lastParameter = $tableFields[$i];
+        $updateParameters = "$updateParameters $lastParameter = :$lastParameter";
 
         
         $updateQuery = "
@@ -100,7 +101,8 @@ class Database {
         ";
         $updateStm = $this->conn->prepare($updateQuery);
         for ($i=0; $i < sizeof($tableFields); $i++) { 
-            $updateStm->bindParam((':' + $tableFields[$i]), $tableValues[$i]);
+            $parameter = $tableFields[$i];
+            $updateStm->bindParam((": + $parameter"), $tableValues[$i]);
         }
 
         $selectStm->execute();
