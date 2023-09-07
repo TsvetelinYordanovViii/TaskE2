@@ -1,11 +1,9 @@
 <?php
-
 include "Database.php";
 
 $db = new Database();
 $db->connect("localhost", "taske2", "root", "");
 
-echo encodeIntoJson("products", $db);
 if (isset($_POST["add"])){
     echo addProduct($_POST["name"], $_POST["description"], $_POST["price"], $_POST["image_url"], $db);
 }
@@ -47,12 +45,6 @@ function addProduct ($productName, $productDescription, $productPrice, $imageUrl
         $database->createRecord($fields, $values, "products");
         return "Product added successfully.";
     }
-}
-
-function encodeIntoJson ($table, $database){
-    $source = filter_var($table, FILTER_SANITIZE_STRING);
-    $data = $database->readRecord("" , $table);
-    return json_encode($data);
 }
 ?>
 
