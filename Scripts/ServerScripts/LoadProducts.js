@@ -34,8 +34,8 @@ const loadItems = (objectToAppendTo, path) => {
                 })
             });
             addCart.addEventListener('click', () => {
-                $.post('PHP/LoadProducts.php', { itemIndex: data[i]['id'] }, () => {
-                    alert('Продуктът е добавен в количката.');
+                $.post('PHP/AddToCart.php', { itemIndex: data[i]['id'] }, (debug) => {
+                    alert('Продуктът е добавен в количката.' + debug);
                 })
             });
 

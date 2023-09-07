@@ -45,7 +45,7 @@ session_start();
                 <div class="nav-links col-5 d-flex justify-content-between align-items-center">
                     <div class="header-options d-flex justify-content-between">
                         <a href=""><img src="Styles/Images/SVG/Vector.svg" alt=""></a>
-                        <a href=""><img src="Styles/Images/SVG/Vector(1).svg" alt=""></a>
+                        <a href="Cart.php"><img src="Styles/Images/SVG/Vector(1).svg" alt=""></a>
                         <a href=""><img src="Styles/Images/SVG/Vector(2).svg" alt=""></a>
                     </div>
                     <div class="vr"></div>
@@ -653,7 +653,7 @@ session_start();
     <script src="Scripts/AddressReveal.js"></script>
     <script src="Scripts/BannerSlider.js"></script>
     <script src="Scripts/SwapCommentArrows.js"></script>
-    <script src="Scripts/ServerScripts/LoadProductItems.js"></script>
+    <script src="Scripts/ServerScripts/LoadProducts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
