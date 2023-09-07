@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="Styles/Styles.css">
+    <link rel="stylesheet" href="Styles/StylesE2.css">
     <title>Landing Page E1</title>
 </head>
 
@@ -562,6 +562,16 @@
                                 <img src="Styles/Images/SVG/ArrowWhite.svg" alt="">
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="products-row row mt-5 mb-5">
+                    <div class="col-3 product-item">
+                            <img src="Styles/Images/PNG/image 2.png" alt="">
+                            <p class="name fw-bold">Фар за Audi A5 Coupe I (06.2007 - 01.2017), купе, позиция: дясна</p>
+                            <div class="d-flex flex-row justify-content-between align-items-center">
+                                <p class="catalog">Кат. №: s_167232784</p>
+                                <p class="price fw-bold">967.70 лв.</p>
+                            </div>
                     </div>
                 </div>
                 <div class="location varna position-absolute d-flex justify-content-center align-items-center">

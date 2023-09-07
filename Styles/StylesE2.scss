@@ -417,6 +417,32 @@ nav {
     }
 }
 
+.product-item {
+    position: relative;
+
+    p {
+        margin: 0rem;
+    }
+
+    .name {
+        font-size: 14.61px;
+    }
+
+    .catalog {
+        font-size: 12.52px;
+        color: #999999;
+    }
+
+    .price {
+        font-size: 18.78px;
+        color: #5FB865;
+    }
+
+    img {
+        object-fit: contain;
+    }
+}
+
 .offer-slider {
     margin-left: 32px;
 
