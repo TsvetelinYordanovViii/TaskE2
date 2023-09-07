@@ -42,9 +42,13 @@ class Database {
 
         $createStm = $this->conn->prepare($createQuery);
         for ($i=0; $i < sizeof($tableFields); $i++) { 
-            $parameter = ":$tableFields[$i]";
-            $parameterValue = $tableValues[$i];
-            $createStm->bindParam($parameter, $parameterValue);
+            //This is getting dumb. Not only I cannot put arrays inside strings because the square brackets are not considered
+            //part of the variable nor write function names for quick debug for the same reason, if I use the same variable in a cycle
+            //to bind parameters in a query, it will apply the last binded parameter to everything. I have to jump through hoops
+            //just to make a function that is supposed create an insert query of with a variable number of parameters work as intended.
+            $temp = $tableFields[$i];
+            $parameter[$i] = ":$temp";
+            $createStm->bindParam($parameter[$i], $tableValues[$i]);
         }
         $createStm->execute();
     }
@@ -62,7 +66,7 @@ class Database {
             WHERE id = :searchedId
             ";
             $selectStm = $this->conn->prepare($selectQuery);
-            $selectStm->bindParam(':searchedId', $searchedId);
+            $selectStm->bindParam(":searchedId", $searchedId);
         }
         else{
             $selectQuery = "
@@ -101,8 +105,9 @@ class Database {
         ";
         $updateStm = $this->conn->prepare($updateQuery);
         for ($i=0; $i < sizeof($tableFields); $i++) { 
-            $parameter = $tableFields[$i];
-            $updateStm->bindParam((": + $parameter"), $tableValues[$i]);
+            $temp = $tableFields[$i];
+            $parameter[$i] = ":$temp";
+            $updateStm->bindParam(($parameter[$i]), $tableValues[$i]);
         }
 
         $selectStm->execute();
@@ -118,7 +123,7 @@ class Database {
         ";
 
         $deleteStm = $this->conn->prepare($deleteQuery);
-        $deleteStm->bindParam(':id', $deletedId);
+        $deleteStm->bindParam(":id", $deletedId);
         $deleteStm->execute();
     }
 }

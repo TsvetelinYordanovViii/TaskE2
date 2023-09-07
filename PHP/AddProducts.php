@@ -5,8 +5,9 @@ include "Database.php";
 $db = new Database();
 $db->connect("localhost", "taske2", "root", "");
 
-if (isset($_POST['add'])){
-    echo addProduct($_POST['name'], $_POST['description'], $_POST['price'], $_POST['image_url'], $db);
+echo encodeIntoJson("products", $db);
+if (isset($_POST["add"])){
+    echo addProduct($_POST["name"], $_POST["description"], $_POST["price"], $_POST["image_url"], $db);
 }
 
 function addProduct ($productName, $productDescription, $productPrice, $imageUrl, $database){
@@ -25,30 +26,34 @@ function addProduct ($productName, $productDescription, $productPrice, $imageUrl
         return "The price cannot be negative.";
     }
     else{
-        $fields = ['name'];
+        $fields = ["name"];
         $values = [$name];
         $fieldIndex = 1;
         if (!empty($productDescription)){
 
-            $fields[$fieldIndex] = 'description';
+            $fields[$fieldIndex] = "description";
             $values[$fieldIndex] = $description;
             $fieldIndex++;
         }
-        $fields[$fieldIndex] = 'price';
+        $fields[$fieldIndex] = "price";
         $values[$fieldIndex] = $price;
         $fieldIndex++;
-        if (!empty($productDescription)){
+        if (!empty($imageUrl)){
             
-            $fields[$fieldIndex] = 'image_url';
+            $fields[$fieldIndex] = "image_url";
             $values[$fieldIndex] = $url;
             $fieldIndex++;
-            $length = sizeof($values);
         }
         $database->createRecord($fields, $values, "products");
         return "Product added successfully.";
     }
 }
 
+function encodeIntoJson ($table, $database){
+    $source = filter_var($table, FILTER_SANITIZE_STRING);
+    $data = $database->readRecord("" , $table);
+    return json_encode($data);
+}
 ?>
 
 <!DOCTYPE html>
