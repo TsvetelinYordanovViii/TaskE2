@@ -445,6 +445,18 @@ nav {
         object-fit: contain;
     }
 
+    .buttons {
+        .view-details {
+            background-color: #008AEE;
+            color: white;
+        }
+
+        .add-cart {
+            background-color: #5FB865;
+            color: white;
+        }
+    }
+
     &.sliding {
         transition: transform 0.5s, opacity 0.5s;
         transform: translateX(0%);

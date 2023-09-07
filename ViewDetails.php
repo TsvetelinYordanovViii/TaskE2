@@ -1,3 +1,21 @@
+<?php
+
+session_start();
+if (isset($_SESSION['viewedItem'])){
+    $imageUrl = $_SESSION['viewedItem'][0]['image_url'];
+    $name = $_SESSION['viewedItem'][0]['name'];
+    $description = $_SESSION['viewedItem'][0]['description'];
+    $price = $_SESSION['viewedItem'][0]['price'];
+}
+else{
+    $imageUrl = "Styles/Images/PNG/Image 1.png";
+    $name = "Няма намерен предмет.";
+    $description = "N/A";
+    $price = "0";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +24,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="Styles/Styles.css">
+    <link rel="stylesheet" href="Styles/StylesE2.css">
+    <link rel="stylesheet" href="Styles/Details.css">
     <title>Landing Page E1</title>
 </head>
 
@@ -106,8 +125,18 @@
                 </nav>
             </section>
         </header>
-        <section class="content">
-
+        <section class="item d-flex justify-content-center">
+            <div
+                class="viewed-item border rounded-4 bg-white w-100 h-100 d-flex justify-content-center align-items-center pt-5 pb-5">
+                <div class="image-container d-flex justify-content-center w-50">
+                    <img src="<?php echo $imageUrl?>" alt="">
+                </div>
+                <p class="name fw-bold w-75"><?php echo $name?></p>
+                <div class="d-flex w-75 flex-row justify-content-between align-items-center">
+                    <p class="catalog"><?php echo $description?></p>
+                    <p class="price fw-bold"><?php echo $price?> лв.</p>
+                </div>
+            </div>
         </section>
         <footer>
             <div class="footer-bg position-absolute"></div>
@@ -162,8 +191,7 @@
     <script src="Scripts/Libraries/ScrollMagic.min.js"></script>
     <script src="Scripts/Libraries/ScrollMagicPlugins/animation.gsap.js"></script>
     <script src="Scripts/Libraries/ScrollMagicPlugins/debug.addIndicators.js"></script>
-    <script src="Scripts/ScrollAnimations.js"></script>
-    <script src="Scripts/ServerScripts/LoadProductItems.js"></script>
+    <script src="Scripts/ScrollAnimationsViewDetails.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>

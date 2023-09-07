@@ -1,0 +1,43 @@
+.item {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+
+    p {
+        margin: 0rem;
+    }
+
+    .name {
+        font-size: 14.61px;
+    }
+
+    .catalog {
+        font-size: 12.52px;
+        color: #999999;
+    }
+
+    .price {
+        font-size: 18.78px;
+        color: #5FB865;
+    }
+
+    .viewed-item {
+        flex-direction: row;
+
+        .image-container {
+            margin-right: 2rem;
+        }
+    }
+}
+
+@media (max-width: 991.98px) {
+    .item {
+        .viewed-item {
+            flex-direction: column;
+
+            .image-container {
+                margin-right: 0rem;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}
