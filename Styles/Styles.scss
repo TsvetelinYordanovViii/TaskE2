@@ -419,6 +419,9 @@ nav {
 
 .product-item {
     position: relative;
+    transform: translateX(10%);
+    opacity: 0;
+    margin-bottom: 3rem;
 
     p {
         margin: 0rem;
@@ -440,6 +443,12 @@ nav {
 
     img {
         object-fit: contain;
+    }
+
+    &.sliding {
+        transition: transform 0.5s, opacity 0.5s;
+        transform: translateX(0%);
+        opacity: 1;
     }
 }
 
