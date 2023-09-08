@@ -16,7 +16,7 @@ $banners = $db->readRecord("" , "banner_slides");
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="Styles/StylesE2.css">
-    <title>Landing Page E1</title>
+    <title>Landing Page E2</title>
 </head>
 
 <body>
@@ -234,7 +234,7 @@ $banners = $db->readRecord("" , "banner_slides");
                                 <img src="Styles/Images/SVG/ArrowBlue.svg" alt="">
                             </button>
                         </div>
-                        <div class="offer-item current">
+                        <div class="item current">
                             <img src="Styles/Images/PNG/image 1.png" alt="">
                             <p class="name fw-bold">Фар за Audi A5 Coupe I (06.2007 - 01.2017), купе, позиция: дясна</p>
                             <div class="d-flex flex-row justify-content-between align-items-center">
@@ -242,7 +242,7 @@ $banners = $db->readRecord("" , "banner_slides");
                                 <p class="price fw-bold">967.70 лв.</p>
                             </div>
                         </div>
-                        <div class="offer-item">
+                        <div class="item">
                             <img src="Styles/Images/PNG/image 2.png" alt="">
                             <p class="name fw-bold">Фар за Audi A5 Coupe I (06.2007 - 01.2017), купе, позиция: дясна</p>
                             <div class="d-flex flex-row justify-content-between align-items-center">
@@ -250,7 +250,7 @@ $banners = $db->readRecord("" , "banner_slides");
                                 <p class="price fw-bold">967.70 лв.</p>
                             </div>
                         </div>
-                        <div class="offer-item">
+                        <div class="item">
                             <img src="Styles/Images/PNG/image 1.png" alt="">
                             <p class="name fw-bold">Фар за Audi A5 Coupe I (06.2007 - 01.2017), купе, позиция: дясна</p>
                             <div class="d-flex flex-row justify-content-between align-items-center">
@@ -258,7 +258,7 @@ $banners = $db->readRecord("" , "banner_slides");
                                 <p class="price fw-bold">967.70 лв.</p>
                             </div>
                         </div>
-                        <div class="offer-item">
+                        <div class="item">
                             <img src="Styles/Images/PNG/image 2.png" alt="">
                             <p class="name fw-bold">Фар за Audi A5 Coupe I (06.2007 - 01.2017), купе, позиция: дясна</p>
                             <div class="d-flex flex-row justify-content-between align-items-center">
@@ -266,7 +266,7 @@ $banners = $db->readRecord("" , "banner_slides");
                                 <p class="price fw-bold">967.70 лв.</p>
                             </div>
                         </div>
-                        <div class="offer-item">
+                        <div class="item">
                             <img src="Styles/Images/PNG/image 1.png" alt="">
                             <p class="name fw-bold">Фар за Audi A5 Coupe I (06.2007 - 01.2017), купе, позиция: дясна</p>
                             <div class="d-flex flex-row justify-content-between align-items-center">
@@ -274,7 +274,7 @@ $banners = $db->readRecord("" , "banner_slides");
                                 <p class="price fw-bold">967.70 лв.</p>
                             </div>
                         </div>
-                        <div class="offer-item">
+                        <div class="item">
                             <img src="Styles/Images/PNG/image 2.png" alt="">
                             <p class="name fw-bold">Фар за Audi A5 Coupe I (06.2007 - 01.2017), купе, позиция: дясна</p>
                             <div class="d-flex flex-row justify-content-between align-items-center">
@@ -294,42 +294,42 @@ $banners = $db->readRecord("" , "banner_slides");
             <div id="latest-row" class="latest-row row">
                 <div class="latest-slider col-9 pe-0 ps-0 position-relative">
                     <h5 class="fw-bold position-absolute">Последни оферти и запитвания:</h5>
-                    <div class="latest d-flex flex-row position-relative overflow-hidden me-0 ms-0 mt-4">
-                        <div class="latest-item current">
+                    <div class="latest d-flex flex-row position-relative overflow-hidden mt-4">
+                        <div class="item current">
                             <img src="Styles/Images/PNG/image 1 (green border).png" alt="">
                             <p class="name fw-bold"><span class="buying text-uppercase">КУПУВАМ</span> Фар за Audi A5
                                 Coupe I (06.2007
                                 - 01.2017)
                             </p>
                         </div>
-                        <div class="latest-item">
+                        <div class="item">
                             <img src="Styles/Images/PNG/image 2 (green border).png" alt="">
                             <p class="name fw-bold"><span class="offerring text-uppercase">Оферта за</span> Фар за Audi
                                 A5 Coupe I
                                 (06.2007 - 01.2017)
                             </p>
                         </div>
-                        <div class="latest-item">
+                        <div class="item">
                             <img src="Styles/Images/PNG/image 1 (green border).png" alt="">
                             <p class="name fw-bold"><span class="buying text-uppercase">КУПУВАМ</span> Фар за Audi A5
                                 Coupe I (06.2007
                                 - 01.2017)</p>
                         </div>
-                        <div class="latest-item">
+                        <div class="item">
                             <img src="Styles/Images/PNG/image 2 (green border).png" alt="">
                             <p class="name fw-bold"><span class="offerring text-uppercase">Оферта за</span> Фар за Audi
                                 A5 Coupe I
                                 (06.2007 - 01.2017)
                             </p>
                         </div>
-                        <div class="latest-item">
+                        <div class="item">
                             <img src="Styles/Images/PNG/image 1 (green border).png" alt="">
                             <p class="name fw-bold"><span class="buying text-uppercase">КУПУВАМ</span> Фар за Audi A5
                                 Coupe I (06.2007
                                 - 01.2017)
                             </p>
                         </div>
-                        <div class="latest-item">
+                        <div class="item">
                             <img src="Styles/Images/PNG/image 2 (green border).png" alt="">
                             <p class="name fw-bold"><span class="offerring text-uppercase">Оферта за</span> Фар за Audi
                                 A5 Coupe I
@@ -669,7 +669,7 @@ $banners = $db->readRecord("" , "banner_slides");
     <script src="Scripts/Libraries/ScrollMagicPlugins/debug.addIndicators.js"></script>
     <script src="Scripts/ScrollAnimations.js"></script>
     <script src="Scripts/CommentCarousel.js"></script>
-    <script src="Scripts/SlideItem.js"></script>
+    <script src="Scripts/SlideItems.js"></script>
     <script src="Scripts/AddressReveal.js"></script>
     <!--This server script's functions is used by the banner slider script.-->
     <script src="Scripts/SwapCommentArrows.js"></script>
