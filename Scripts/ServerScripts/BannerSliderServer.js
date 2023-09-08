@@ -1,8 +1,19 @@
 let bannerIndex = 0;
+let bannerCount = 0;
+let bannerImages;
+
+$.post('PHP/GetBanners.php', { bannerIndex: '' }, (output) => {
+    const data = JSON.parse(output);
+    bannerCount = data.length - 1;
+})
+
+$.post('PHP/GetBanners.php', { bannerIndex: '' }, (output) => {
+    const data = JSON.parse(output);
+    bannerImages = data;
+})
 
 const bannerNext = document.querySelector('.banner-slide-left');
 const bannerPrevious = document.querySelector('.banner-slide-right');
-
 bannerNext.addEventListener('click', () => {
     if (bannerIndex > 0) {
         slideBanner('.banner', 'left', -1);
@@ -11,7 +22,7 @@ bannerNext.addEventListener('click', () => {
 });
 
 bannerPrevious.addEventListener('click', () => {
-    if (bannerIndex < 3) {
+    if (bannerIndex < bannerCount) {
         slideBanner('.banner', 'right', 1);
         highlightBannerDot(bannerIndex);
     }
@@ -19,21 +30,17 @@ bannerPrevious.addEventListener('click', () => {
 
 const slideBanner = (sliderClass, direction, sign) => {
     bannerIndex = bannerIndex + sign;
+
     const banner = $(sliderClass);
+
     const currentBanner = $(sliderClass + " img.current")
 
-    const imagePath = bannerIndex === 0 ? 'Styles/Images/PNG/Rectangle 100.png' : '';
-    const nextBanner = $(`<img class="position-absolute" src="${imagePath}" alt="Banner Image">`);
+    let imageFile = bannerImages[bannerIndex]['image_url'];
 
-    if (bannerIndex === 1) {
-        nextBanner.css('background-color', 'orange');
-    }
-    else if (bannerIndex === 2) {
-        nextBanner.css('background-color', 'green');
-    }
-    else if (bannerIndex === 3) {
-        nextBanner.css('background-color', 'yellow');
-    }
+
+    //A timeout because it takes time for the query to search the database?
+    const imagePath = `Styles/Images/PNG/${imageFile}`;
+    const nextBanner = $(`<img class="position-absolute" src="${imagePath}" alt="Banner Image">`);
 
     banner.prepend(nextBanner);
     nextBanner.addClass('current');

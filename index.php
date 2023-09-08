@@ -1,5 +1,10 @@
 <?php
+include "PHP/GetBanners.php";
 session_start();
+$db = new Database();
+$db->connect("localhost", "taske2", "root", "");
+$banners = $db->readRecord("" , "banner_slides");
+
 ?>
 
 <!DOCTYPE html>
@@ -22,10 +27,20 @@ session_start();
         <div class="anchor-div position-relative">
             <button class="banner-slide-left h-100"></button>
             <div class="image-dots d-flex flex-row justify-content-center position-absolute">
-                <div class="image-dot current-image rounded-5 p-1 me-1"></div>
-                <div class="image-dot rounded-5 p-1 me-1"></div>
-                <div class="image-dot rounded-5 p-1 me-1"></div>
-                <div class="image-dot rounded-5 p-1"></div>
+                <?php
+                
+                //The first dot is highlighted and the last dot doesn't have a margin.
+                if (sizeof($banners) >= 1){
+                    echo "<div class='image-dot current-image rounded-5 p-1 me-1'></div>";
+                }
+                for ($i=1; $i < sizeof($banners)-1; $i++) { 
+                    echo "<div class='image-dot rounded-5 p-1 me-1'></div>";
+                }
+                if (sizeof($banners) > 1){
+                    echo "<div class='image-dot rounded-5 p-1'></div>";
+                }
+
+                ?>
             </div>
             <button class="banner-slide-right h-100"></button>
         </div>
@@ -656,10 +671,11 @@ session_start();
     <script src="Scripts/CommentCarousel.js"></script>
     <script src="Scripts/SlideItem.js"></script>
     <script src="Scripts/AddressReveal.js"></script>
-    <script src="Scripts/BannerSlider.js"></script>
+    <!--This server script's functions is used by the banner slider script.-->
     <script src="Scripts/SwapCommentArrows.js"></script>
     <script src="Scripts/ServerScripts/LoadProductFromData.js"></script>
     <script src="Scripts/ServerScripts/CountCartProducts.js"></script>
+    <script src="Scripts/ServerScripts/BannerSliderServer.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
