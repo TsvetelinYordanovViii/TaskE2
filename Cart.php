@@ -12,6 +12,7 @@
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="Styles/StylesE2.css">
     <link rel="stylesheet" href="Styles/Details.css">
+    <link rel="stylesheet" href="Styles/Cart.css">
     <title>Landing Page E1</title>
 </head>
 
@@ -117,6 +118,9 @@
             </section>
         </header>
         <section class="cart item d-flex flex-column justify-content-center">
+        </section>
+        <section class="checkout mt-5 mb-5 d-flex align-items-center justify-content-center">
+            <button class="btn p-3 rounded-pill bg-info fw-bold">Заяви поръчка</button>
         </section>
         <footer>
             <div class="footer-bg position-absolute"></div>
