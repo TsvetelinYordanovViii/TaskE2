@@ -37,8 +37,6 @@ const slideBanner = (sliderClass, direction, sign) => {
 
     let imageFile = bannerImages[bannerIndex]['image_url'];
 
-
-    //A timeout because it takes time for the query to search the database?
     const imagePath = `Styles/Images/PNG/${imageFile}`;
     const nextBanner = $(`<img class="position-absolute" src="${imagePath}" alt="Banner Image">`);
 
