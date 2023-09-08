@@ -81,6 +81,7 @@ class Database {
 
     public function updateRecord($id, $fields, $values, $table){
         $searchedTable = filter_var($table, FILTER_SANITIZE_STRING);
+        $updatedId = filter_var($id, FILTER_SANITIZE_STRING);
         $tableFields = $fields;
         $tableValues = $values;
         
@@ -94,10 +95,10 @@ class Database {
             $parameter = $tableFields[$i];
             $updateParameters =  "$updateParameters $parameter = :$parameter,";
         }
-        $lastParameter = $tableFields[$i];
+        $lastParameter = $tableFields[sizeof($tableFields)-1];
         $updateParameters = "$updateParameters $lastParameter = :$lastParameter";
 
-        
+     
         $updateQuery = "
             UPDATE $searchedTable
             SET $updateParameters
@@ -109,8 +110,9 @@ class Database {
             $parameter[$i] = ":$temp";
             $updateStm->bindParam(($parameter[$i]), $tableValues[$i]);
         }
+        $updateStm->bindParam(":id", $updatedId);
 
-        $selectStm->execute();
+        $updateStm->execute();
     }
 
     public function deleteRecord($id, $table){
