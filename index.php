@@ -35,7 +35,7 @@ session_start();
             <section class="row w-100 justify-content-between">
                 <div class="header-top-bg position-absolute"></div>
                 <div class="col-5 d-flex justify-content-between align-items-center">
-                    <a href=""><img class="logo-icon" src="Styles/Images/SVG/Logo.svg" alt="Logo"></a>
+                    <a href="index.php"><img class="logo-icon" src="Styles/Images/SVG/Logo.svg" alt="Logo"></a>
                     <div class="vr"></div>
                     <div class="other-sites d-flex justify-content-between flex-nowrap">
                         <a class="me-2" href=""><img src="Styles/Images/SVG/Group 362.svg" alt="Logo"></a>
@@ -635,7 +635,7 @@ session_start();
                 <div class="footer-col col-md-3 d-flex flex-column justify-content-between align-items-center">
                     <div class="footer-links rounded-3 d-flex flex-column justify-content-between align-items-center">
                         <div class="d-flex flex-column justify-content-between align-items-center m-2">
-                            <a href=""><img src="Styles/Images/SVG/Logo.svg" alt="Logo"></a>
+                            <a href="index.php"><img src="Styles/Images/SVG/Logo.svg" alt="Logo"></a>
                             <p class="copyright">2023 © MEGAPARTS Marketplace</p>
                         </div>
                         <div class="d-flex flex-column justify-content-between align-items-center m-2">
