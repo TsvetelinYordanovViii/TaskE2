@@ -1,11 +1,9 @@
 
-let cartObjectCount = 0;
 const loadCartItems = (objectToAppendTo, sessionGetPath, dataLoadPath) => {
     $.post(sessionGetPath, { cartIndexes: 'cartIndexes' }, (cartIndexesJson) => {
         cartIndexes = JSON.parse(cartIndexesJson);
 
         for (let i = 0; i < cartIndexes.length; i++) {
-            cartObjectCount = cartIndexes[i][1]
             $.post(dataLoadPath, { cartItemIndex: cartIndexes[i][0] }, (dataJson) => {
                 const data = JSON.parse(dataJson);
                 let cartItemExtraModification = document.createElement('div');

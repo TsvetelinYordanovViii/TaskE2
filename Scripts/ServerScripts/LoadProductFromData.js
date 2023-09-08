@@ -36,6 +36,9 @@ const loadItems = (objectToAppendTo, path) => {
             addCart.addEventListener('click', () => {
                 $.post('PHP/AddToCart.php', { itemIndex: data[i]['id'] }, (debug) => {
                     alert('Продуктът е добавен в количката.' + debug);
+                    if (countCartItems !== undefined) {
+                        countCartItems(document.querySelector('.shopping-cart span'), 'PHP/GetCartIndexes.php');
+                    }
                 })
             });
 

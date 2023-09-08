@@ -32,7 +32,12 @@
                 <div class="nav-links col-5 d-flex justify-content-between align-items-center">
                     <div class="header-options d-flex justify-content-between">
                         <a href=""><img src="Styles/Images/SVG/Vector.svg" alt=""></a>
-                        <a href=""><img src="Styles/Images/SVG/Vector(1).svg" alt=""></a>
+                        <a class="shopping-cart position-relative" href="Cart.php">
+                            <img src="Styles/Images/SVG/Vector(1).svg" alt="">
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger visually-hidden">
+                                0
+                            </span>
+                        </a>
                         <a href=""><img src="Styles/Images/SVG/Vector(2).svg" alt=""></a>
                     </div>
                     <div class="vr"></div>
@@ -168,6 +173,7 @@
     <script src="Scripts/Libraries/ScrollMagicPlugins/debug.addIndicators.js"></script>
     <script src="Scripts/ScrollAnimationsViewDetails.js"></script>
     <script src="Scripts/ServerScripts/LoadCart.js"></script>
+    <script src="Scripts/ServerScripts/CountCartProducts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
