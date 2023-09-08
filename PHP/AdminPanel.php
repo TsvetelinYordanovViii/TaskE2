@@ -17,8 +17,7 @@ checkRole($_SESSION["role"], "admin", "../index.php");
     <div class="container d-flex justify-content-center align-items-center h-75">
         <div id="login-form" class="mt-5 w-75 card d-flex justify-content-center align-items-center" action="PurePHP/submitLogin.php" method="post">
             <a href="AddProducts.php">Add Product</a>
-            <a href="AddProducts.php">Banner Management</a>
-            <a href="AddProducts.php">Roles</a>
+            <a href="BannerManagement.php">Banner Management</a>
             <a href="Logout.php">Logout</a>
         </div>
     </div>

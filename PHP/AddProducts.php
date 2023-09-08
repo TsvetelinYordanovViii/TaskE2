@@ -17,9 +17,6 @@ function addProduct ($productName, $productDescription, $productPrice, $imageUrl
     $price = filter_var($productPrice, FILTER_SANITIZE_STRING);
     $url = filter_var($imageUrl, FILTER_SANITIZE_STRING);
 
-    //if ($currentUser->getRole()!="admin"){
-    //    return "You are not allowed to add new products.";
-    //}
     if (empty($name) || empty($productPrice)){
         return "Either the name or the price field is empty.";
     }

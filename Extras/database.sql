@@ -8,3 +8,10 @@ CREATE TABLE `taske2`.`products`
     `image_url` VARCHAR(80) NULL 
     , PRIMARY KEY (`id`))
   ENGINE = InnoDB; 
+
+
+  CREATE TABLE `taske2`.`banner_slides` 
+  (`id` INT NOT NULL AUTO_INCREMENT , 
+  `image_url` VARCHAR(100) NOT NULL , 
+  PRIMARY KEY (`id`)
+  ) ENGINE = InnoDB; 
